@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #1A1A2E;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .booking-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 400px;
+        }
+
+        .booking-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .booking-title span {
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input:-webkit-autofill {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: white !important;
+            -webkit-text-fill-color: white !important;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #FFD700;
+            color: #1A1A2E;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <h1 class="booking-title">GAMENGO <span>VIDEO GAME BOOKING</span></h1>
+        <form id="videoGameForm">
+            <div class="input-group">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}">
+            </div>
+            <div class="input-group">
+                <input type="text" onfocus="(this.type='date')" id="date" placeholder="Date" required>
+            </div>
+            <div class="input-group">
+                <input type="text" onfocus="(this.type='time')" id="time" placeholder="Time" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="place" placeholder="Place" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="location" placeholder="Location" required>
+            </div>
+            <button type="submit" class="btn book-btn">BOOK VIDEO GAME</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("videoGameForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Increase points by 10
+            let points = parseInt(localStorage.getItem("points")) || 0;
+            points += 10;
+            localStorage.setItem("points", points);
+
+            // Redirect to success page
+            window.location.href = "success.html";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameNgo - Rocket Sports Booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: gold;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .booking-container {
+            width: 400px;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            text-align: center;
+        }
+
+        .booking-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .booking-title span {
+            color: gold;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: gold;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #b8860b, gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-container">
+        <h1 class="booking-title">GAMENGO <span>ROCKET SPORTS BOOKING</span></h1>
+        <form id="rocketSportsForm">
+            <div class="input-group">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="mobile" placeholder="Mobile Number" required pattern="[0-9]{10}">
+            </div>
+            <div class="input-group">
+                <input type="text" onfocus="(this.type='date')" id="date" placeholder="Date" required>
+            </div>
+            <div class="input-group">
+                <input type="text" onfocus="(this.type='time')" id="time" placeholder="Time" required>
+            </div>
+            <div class="input-group">
+                <input type="text" id="place" placeholder="Court/Location" required>
+            </div>
+            <button type="submit" class="btn book-btn">BOOK NOW</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("rocketSportsForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let points = parseInt(localStorage.getItem("points")) || 0;
+            points += 10;
+            localStorage.setItem("points", points);
+            window.location.href = "success.html";
+        });
+    </script>
+</body>
+</html>

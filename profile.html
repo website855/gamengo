@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameNgo - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: gold;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 400px;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 span {
+            color: gold;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        .profile-details p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: gold;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #b8860b, gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        #offerMessage {
+            color: gold;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span>Profile</span> Page</h1>
+        <div class="profile-details">
+            <p><strong>Username:</strong> <span id="username"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Points:</strong> <span id="points"></span></p>
+            <p id="offerMessage" style="display: none;"></p>
+        </div>
+        <button class="btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        let username = localStorage.getItem("username");
+        let email = localStorage.getItem("email");
+        let points = parseInt(localStorage.getItem("points")) || 0;
+
+        document.getElementById("username").textContent = username || "Guest";
+        document.getElementById("email").textContent = email || "Not available";
+        document.getElementById("points").textContent = points;
+
+        if (points >= 100) {
+            let offers = [
+                "10% off on your next booking!",
+                "Book 1 slot, get 1 free!",
+                "Exclusive VIP access to premium turfs!",
+                "500 LKR discount on your next booking!"
+            ];
+            let randomOffer = offers[Math.floor(Math.random() * offers.length)];
+            document.getElementById("offerMessage").textContent = "🎉 Congrats! " + randomOffer;
+            document.getElementById("offerMessage").style.display = "block";
+        }
+
+        function logout() {
+            localStorage.setItem("isLoggedIn", "false");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

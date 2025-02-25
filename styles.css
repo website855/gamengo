@@ -1,0 +1,324 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Luxury Body Background */
+body {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #262626);
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Background Animation */
+body.animate-bg {
+    animation: moveBackground 30s infinite linear;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100vw 100vh; }
+}
+
+/* Shared Container Styles */
+.container {
+    width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Title Heading */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 span {
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+/* Paragraph Text */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Buttons Shared */
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #b8860b, #FFD700);
+}
+
+/* Glow Effect on Hover */
+.btn:hover {
+    background: linear-gradient(45deg, #FFD700, #b8860b);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+    transform: scale(1.1);
+}
+
+/* Buttons: Login & Signup */
+.btn.login {
+    background: rgba(255, 215, 0, 0.7);
+    margin-bottom: 20px;
+}
+
+.btn.signup {
+    background: rgba(218, 165, 32, 0.7);
+}
+
+/* Input Fields */
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 10px;
+    background: rgba(40, 40, 40, 0.9);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover {
+    background: rgba(60, 60, 60, 0.9);
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    background: rgba(80, 80, 80, 0.9);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Small Link Below Buttons */
+small {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+small a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+small a:hover {
+    color: #b8860b;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    z-index: 999;
+}
+
+.nav-left {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(45deg, #b8860b, #FFD700);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.9);
+    transform: scale(1.1);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Profile Button */
+.user-profile {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+    background: linear-gradient(45deg, #b8860b, #FFD700);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+    border: none;
+    transform: scale(1.1);
+}
+
+/* Website Logo */
+.logo {
+    height: 50px;
+    width: auto;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design - Universal Fit for All Devices */
+@media (max-width: 1200px) {
+    .container {
+        width: 70%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        width: 80%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"] {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"] {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+}

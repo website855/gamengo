@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameNgo - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            overflow-y: auto;
+            background: linear-gradient(to right, #1a1a1a, #0d0d0d);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            padding: 15px;
+            box-shadow: 0 2px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-btn, .user-profile {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-btn:hover, .user-profile:hover {
+            color: #b8860b;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 15px;
+        }
+
+        .welcome-container {
+            text-align: center;
+            padding: 900px 20px 50px;
+        }
+
+        .welcome-container h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .welcome-container h1 span {
+            color: #FFD700;
+        }
+
+        .booking-options, .sports-articles {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 30px 10px;
+        }
+
+        .booking-card, .article-card {
+            background: #222;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            width: 30%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        .booking-card:hover, .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Ensuring all images are the same size and fit properly */
+        .booking-card img, .article-card img {
+            width: 100%;
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensures the image covers the space while maintaining aspect ratio */
+            border-bottom: 4px solid #FFD700;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #FFD700;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background: #b8860b;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="turf_booking.html" class="nav-btn">Turf</a>
+            <a href="video_game_booking.html" class="nav-btn">Video Game</a>
+            <a href="rocket_sports_booking.html" class="nav-btn">Rocket Sports</a>
+            <a href="kids_play_station_booking.html" class="nav-btn">Kids Play Station</a>
+            <a href="swimming_booking.html" class="nav-btn">Swimming</a>
+            <a href="turfs.html" class="nav-btn">Turfs in Sri Lanka</a>
+            <a href="contact.html" class="nav-btn">Contact</a>
+        </div>
+        <div class="nav-right">
+            <a href="profile.html" class="user-profile">Profile</a>
+            <img src="logo.jpg" alt="GameNgo Logo" class="logo">
+        </div>
+    </nav>
+
+    <div class="welcome-container">
+        <h1 class="title">Welcome to <span>GameNgo</span></h1>
+        <p>Book your turf, video games, or sports facilities with ease!</p>
+    </div>
+
+    <!-- Booking Options Section -->
+    <div class="booking-options">
+        <div class="booking-card">
+            <img src="turf.jpeg" alt="Turf Booking">
+            <h2>Turf Booking</h2>
+            <p>Reserve a turf for your sports activities and matches.</p>
+            <a href="turf_booking.html" class="btn">Book Now</a>
+        </div>
+        <div class="booking-card">
+            <img src="videogame.jpeg" alt="Video Game Booking">
+            <h2>Video Game Booking</h2>
+            <p>Enjoy gaming sessions with friends at our video game center.</p>
+            <a href="video_game_booking.html" class="btn">Book Now</a>
+        </div>
+        <div class="booking-card">
+            <img src="rocket.jpeg" alt="Rocket Sports">
+            <h2>Rocket Sports</h2>
+            <p>Experience the thrill of rocket sports with professional gear.</p>
+            <a href="rocket_sports_booking.html" class="btn">Book Now</a>
+        </div>
+    </div>
+
+    <div class="booking-options">
+        <div class="booking-card">
+            <img src="kids.jpeg" alt="Kids Play Station">
+            <h2>Kids Play Station</h2>
+            <p>Let your kids have fun in a safe and exciting play station.</p>
+            <a href="kids_play_station_booking.html" class="btn">Book Now</a>
+        </div>
+        <div class="booking-card">
+            <img src="swimming.jpeg" alt="Swimming">
+            <h2>Swimming</h2>
+            <p>Enjoy a relaxing swim or join our professional swimming classes.</p>
+            <a href="swimming_booking.html" class="btn">Book Now</a>
+        </div>
+    </div>
+
+    <!-- Recent Sports Articles Section -->
+    <div class="sports-articles">
+        <div class="article-card">
+            <h3>Benefits of Regular Sports</h3>
+            <p>Engaging in sports boosts physical and mental health. Discover the benefits of consistent physical activity.</p>
+            <a href="https://www.healthline.com/nutrition/10-benefits-of-exercise" class="btn">Read More</a>
+        </div>
+        <div class="article-card">
+            <h3>Top Sports Trends of the Year</h3>
+            <p>Explore the latest trends in sports, including emerging technologies and popular activities.</p>
+            <a href="https://bestdiplomats.org/most-popular-sports-in-india/" class="btn">Read More</a>
+        </div>
+        <div class="article-card">
+            <h3>How Sports Build Teamwork</h3>
+            <p>Sports teach valuable teamwork and leadership skills essential for personal and professional growth.</p>
+            <a href="https://versus.co/learn/teamwork-in-sports-why-its-so-important" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <!-- Background Animation Effect -->
+    <script>
+        document.addEventListener("mousemove", function (e) {
+            document.body.style.backgroundPositionX = e.clientX / 20 + "px";
+            document.body.style.backgroundPositionY = e.clientY / 20 + "px";
+        });
+    </script>
+</body>
+</html>
